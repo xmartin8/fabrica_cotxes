@@ -2,14 +2,13 @@ package fabrica_cotxes.view;
 
 import fabrica_cotxes.controller.CotxeController;
 import fabrica_cotxes.model.Cotxe;
-
 import java.util.Scanner;
 
 public class CotxeView {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        CotxeController controller = new CotxeController();
+        CotxeController muntatge = new CotxeController();
         int opcio;
 
         do {
@@ -28,11 +27,11 @@ public class CotxeView {
                 case 1:
                     System.out.print("Introdueix la marca: ");
                     String marca = sc.nextLine();
-                    controller.afegirCotxe(marca);
+                    muntatge.afegirCotxe(marca);
                     break;
 
                 case 2:
-                    System.out.println(controller.llistarCotxes());
+                    System.out.println(muntatge.llistarCotxes());
                     break;
 
                 case 3:
@@ -48,7 +47,7 @@ public class CotxeView {
                     System.out.print("Eco (true/false): ");
                     boolean eco = sc.nextBoolean();
                     sc.nextLine();
-                    controller.montarMotor(iMotor, cv, cc, comb, eco);
+                    muntatge.montarMotor(iMotor, cv, cc, comb, eco);
                     break;
 
                 case 4:
@@ -62,14 +61,14 @@ public class CotxeView {
                     System.out.print("Pes del xasis: ");
                     int pes = sc.nextInt();
 
-                    controller.montarXasis(iXasis, material, pes);
+                    muntatge.montarXasis(iXasis, material, pes);
                     break;
 
 
                 case 5:
-                    controller.filtrarCotxesEco();
-                    Cotxe[] ecoArr = controller.getCotxesEco();
-                    for (Cotxe c : ecoArr) mostrarEco(controller, c);
+                    muntatge.filtrarCotxesEco();
+                    Cotxe[] ecoArr = muntatge.getCotxesEco();
+                    for (Cotxe c : ecoArr) mostrarEco(muntatge, c);
                     break;
             }
 
@@ -92,8 +91,8 @@ public class CotxeView {
     /**
      * Obté l'índex d'un cotxe dins del controller
      */
-    private static int obtenirIndex(CotxeController controller, Cotxe cotxe) {
-        Cotxe[] tots = controller.getTotsCotxes();
+    private static int obtenirIndex(CotxeController muntatge, Cotxe cotxe) {
+        Cotxe[] tots = muntatge.getTotsCotxes();
         for (int i = 0; i < tots.length; i++) {
             if (tots[i] == cotxe) return i;
         }

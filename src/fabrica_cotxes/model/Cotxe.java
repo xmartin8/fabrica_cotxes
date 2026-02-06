@@ -69,6 +69,7 @@ public class Cotxe {
     }
 
     @Override
+    //el toString es permet mostrar un objecte en format text. Si el sobreescrivim, és perquè decidim com mostrar el contingut
     public String toString() {
         return "Cotxe\nMarca: " + marca + "\nModel: " + model +
                 "\nAny: " + any + "\nTipus: " + tipus +
