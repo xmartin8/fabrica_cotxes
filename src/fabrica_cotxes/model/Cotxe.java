@@ -2,7 +2,7 @@ package fabrica_cotxes.model;
 
 public class Cotxe {
 
-    public enum Carrosseria { HATCHBACK, SEDAN, FAMILIAR, COUPE }
+    public enum Carrosseria {HATCHBACK, SEDAN, FAMILIAR, COUPE}
 
     private String marca;
     private String model;
@@ -44,14 +44,29 @@ public class Cotxe {
     }
 
     // Getters i setters
-    public String getMarca() { return marca; }
-    public void setMarca(String marca) { this.marca = marca; }
+    public String getMarca() {
+        return marca;
+    }
 
-    public Motor getMotor() { return motor; }
-    public void setMotor(Motor motor) { this.motor = motor; }
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
 
-    public Xasis getXasis() { return xasis; }
-    public void setXasis(Xasis xasis) { this.xasis = xasis; }
+    public Motor getMotor() {
+        return motor;
+    }
+
+    public void setMotor(Motor motor) {
+        this.motor = motor;
+    }
+
+    public Xasis getXasis() {
+        return xasis;
+    }
+
+    public void setXasis(Xasis xasis) {
+        this.xasis = xasis;
+    }
 
     @Override
     public String toString() {

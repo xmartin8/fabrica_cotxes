@@ -2,6 +2,7 @@ package fabrica_cotxes.view;
 
 import fabrica_cotxes.controller.CotxeController;
 import fabrica_cotxes.model.Cotxe;
+
 import java.util.Scanner;
 
 public class CotxeView {
@@ -54,10 +55,16 @@ public class CotxeView {
                     System.out.print("Índex cotxe: ");
                     int iXasis = sc.nextInt();
                     sc.nextLine();
-                    System.out.print("Tipus xasis: ");
-                    String tipus = sc.nextLine();
-                    controller.montarXasis(iXasis, tipus);
+
+                    System.out.print("Material del xasis: ");
+                    String material = sc.nextLine();
+
+                    System.out.print("Pes del xasis: ");
+                    int pes = sc.nextInt();
+
+                    controller.montarXasis(iXasis, material, pes);
                     break;
+
 
                 case 5:
                     controller.filtrarCotxesEco();
@@ -71,7 +78,9 @@ public class CotxeView {
         System.out.println("Programa finalitzat.");
     }
 
-    /** Mostra un cotxe i si és ecològic */
+    /**
+     * Mostra un cotxe i si és ecològic
+     */
     private static void mostrarEco(CotxeController controller, Cotxe cotxe) {
         boolean eco = controller.esEco(obtenirIndex(controller, cotxe));
         System.out.println("----- INFORMACIÓ DEL COTXE -----");
@@ -80,7 +89,9 @@ public class CotxeView {
         System.out.println("-----------------------------");
     }
 
-    /** Obté l'índex d'un cotxe dins del controller */
+    /**
+     * Obté l'índex d'un cotxe dins del controller
+     */
     private static int obtenirIndex(CotxeController controller, Cotxe cotxe) {
         Cotxe[] tots = controller.getTotsCotxes();
         for (int i = 0; i < tots.length; i++) {

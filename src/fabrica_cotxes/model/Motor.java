@@ -27,17 +27,37 @@ public class Motor {
         this.eco = false;
     }
 
-    public int getCilindrada() { return cilindrada; }
-    public void setCilindrada(int cilindrada) { this.cilindrada = cilindrada; }
+    public int getCilindrada() {
+        return cilindrada;
+    }
 
-    public int getCavalls() { return cavalls; }
-    public void setCavalls(int cavalls) { this.cavalls = cavalls; }
+    public void setCilindrada(int cilindrada) {
+        this.cilindrada = cilindrada;
+    }
 
-    public String getCombustible() { return combustible; }
-    public void setCombustible(String combustible) { this.combustible = combustible; }
+    public int getCavalls() {
+        return cavalls;
+    }
 
-    public boolean isEco() { return eco; }
-    public void setEco(boolean eco) { this.eco = eco; }
+    public void setCavalls(int cavalls) {
+        this.cavalls = cavalls;
+    }
+
+    public String getCombustible() {
+        return combustible;
+    }
+
+    public void setCombustible(String combustible) {
+        this.combustible = combustible;
+    }
+
+    public boolean isEco() {
+        return eco;
+    }
+
+    public void setEco(boolean eco) {
+        this.eco = eco;
+    }
 
     @Override
     public String toString() {

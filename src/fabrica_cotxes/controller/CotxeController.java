@@ -29,9 +29,12 @@ public class CotxeController {
         }
     }
 
-    public void montarXasis(int index, String tipus) {
-        if (index >= 0 && index < numCotxes) cotxes[index].setXasis(new Xasis(tipus));
+    public void montarXasis(int index, String material, int pes) {
+        if (index >= 0 && index < numCotxes) {
+            cotxes[index].setXasis(new Xasis(material, pes));
+        }
     }
+
 
     /** Omple array amb cotxes ecològics segons regles */
     public void filtrarCotxesEco() {
